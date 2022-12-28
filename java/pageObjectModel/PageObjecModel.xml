@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+  <test thread-count="5" name="Test">
+  <parameter name="going" value="Chennai"></parameter>
+  <parameter name="gone" value="Borivali East, Mumbai"></parameter>
+  <parameter name="date" value="20/12/2022"></parameter>
+    <classes>
+      <class name="pageObjectModel.MainClass"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
