@@ -1,71 +1,41 @@
 package org.pages;
 
+import org.BasePages.BasePage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.remote.RemoteWebDriver;
 
-import pageObjectModel.BaseClass;
-import pagesBase.PagesBase;
-import seleniumBase.Locators;
-
-public class LoginPages extends PagesBase{
-	//RemoteWebDriver driver;
-
-	// Lobel validation
-	public boolean getUserNameLabel() {
-		return driver.findElement(By.xpath("(//table[@class='login']//td)[2]")).isDisplayed();
-
+public class LoginPages extends BasePage {
+	public static boolean getUserLable() {
+		return driver.findElement(By.xpath("(//td[@align='right'])[1]")).isEnabled();
 	}
-
-	public boolean getPassWordLabel() {
-		return driver.findElement(By.xpath("//table[@class='login']/tbody[1]/tr[3]/td[1]")).isDisplayed();
+	public static boolean getPasswordLable() {
+		return driver.findElement(By.xpath("(//td[@align='right'])[2]")).isEnabled();
 	}
-
-	// Action
-	/**
-	 * @description- get the data form user and type on the user name field
-	 * @param username-pass
-	 *            the user to be login
-	 * @return 
-	 * @return 
-	 */
-
-	public LoginPages enterUserName(String names) {
-	driver.findElement(By.id("username")).sendKeys(names);
-	//element(Locators.id,"webelement")
-	//type(element,mames)
-	return this;
-		
+	public static boolean getLoginLable() {
+		return driver.findElement(By.xpath("//input[@type='Submit']")).isEnabled();
 	}
-
-	public LoginPages enterPassword(String password) {
-		driver.findElement(By.id("password")).sendKeys(password);
-		return this;
+	
+	
+	public static void enterPassword(String pass) {
+		driver.findElement(By.id("password")).sendKeys(pass);
 	}
-
-	public BookingDetails clickLoing() {
+	public static void loginClick() {
 		driver.findElement(By.id("login")).click();
-		return new BookingDetails();
-	
-
 	}
-	public ForgetPassword forgetPassword() {
-		driver.findElement(By.linkText("Forgot Password?")).click();
-		return new ForgetPassword();
-	}
-	
-	
+	public static void enterUserName(String name) {
+		// TODO Auto-generated method stub
+		driver.findElement(By.id("username")).sendKeys(name);
 		
+//	}
+//	public static void LoginTestCase(String name,String pass) {
+//		enterUserName(name);
+//		enterPassword(pass);
+//		loginClick();
+	}
+	public static void LoginTestCase(String names, String passs) {
+		// TODO Auto-generated method stub
+		enterUserName(names);
+		enterPassword(passs);
+		loginClick();
+	}
 	
-
-	public void selectdropDown(String lang) {
-		// locator
-		// new Select(locator).selectByVisibleText(lang);
-	}
-	public void login(String username,String password) {
-		enterUserName(username);
-		enterPassword(password);
-		clickLoing();
-		
-	}
 }
