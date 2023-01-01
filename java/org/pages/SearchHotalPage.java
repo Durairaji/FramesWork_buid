@@ -46,14 +46,54 @@ public static boolean getResetLable() {
 	return driver.findElement(By.id("Reset")).isEnabled();
 	
 }
+
+
 public static void getLocationDropDown() {
 	WebElement findElement = driver.findElement(By.id("location"));
 	new Select(findElement).selectByIndex(1);
 	
 }
+public static void getHotalLocationDropDown() {
+	WebElement findElement = driver.findElement(By.id("hotels"));
+	new Select(findElement).selectByIndex(1);
+}
+public static void getRoomTypeDropDown() {
+	WebElement findElement = driver.findElement(By.id("room_type"));
+	new Select(findElement).selectByIndex(3);
+}
+public static void getNumberOfRoomDropDown() {
+	WebElement findElement = driver.findElement(By.id("room_nos"));
+	new Select(findElement).selectByIndex(5);
+}
+public static void getCheckInDropDown(){
+	driver.findElement(By.id("datepick_in")).sendKeys("02/01/2023");
+	
+}
+public static void getcheckoutDropDown() {
+	driver.findElement(By.id("datepick_out")).sendKeys("03/01/2023");
+}
+public static void getAdaltPerRommDropDown() {
+	WebElement findElement = driver.findElement(By.id("adult_room"));
+	new Select(findElement).selectByIndex(3);
+	}
 
-
-
+public static void getChildRunPerRoom()
+{
+	WebElement findElement = driver.findElement(By.id("child_room"));
+	new Select(findElement).selectByIndex(1);
+}
+public static void Details() {
+	getLocationDropDown();
+	getHotalLocationDropDown();
+	getRoomTypeDropDown();
+	getNumberOfRoomDropDown();
+	getCheckInDropDown();
+	getcheckoutDropDown();
+	getAdaltPerRommDropDown();
+	getChildRunPerRoom();
+	
+	
+}
 }
 
 

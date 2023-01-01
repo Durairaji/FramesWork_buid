@@ -13,7 +13,7 @@ public class TC001 extends BasePage {
 	}
 
 
-	public void hotalSearchPage() {
+	public void hotalSearchPageAssert() {
 
 		System.out.println(SearchHotalPage.getLocationLabel());
 		System.out.println(SearchHotalPage.getHotalLable());
@@ -29,9 +29,15 @@ public class TC001 extends BasePage {
 	
 	@Test(dataProvider="data")
 	public void testCases(String[] data) {
+		
 		LoginPages.LoginTestCase(data[0],data[1]);
-		hotalSearchPage();
-		SearchHotalPage.getLocationDropDown();
+		
+		hotalSearchPageAssert();
+		
+		SearchHotalPage.Details();
+		
+	
+		
 
 	}
 }
@@ -81,7 +87,15 @@ public class TC001 extends BasePage {
 
 
 
-
+//SearchHotalPage.getLocationDropDown();
+//SearchHotalPage.getLocationDropDown();
+//SearchHotalPage.getHotalLocationDropDown();
+//SearchHotalPage.getRoomTypeDropDown();
+//SearchHotalPage.getNumberOfRoomDropDown();
+//SearchHotalPage.getCheckInDropDown();
+//SearchHotalPage.getcheckoutDropDown();
+//SearchHotalPage.getAdaltPerRommDropDown();
+//SearchHotalPage.getChildRunPerRoom();
 
 
 // System.out.println(LoginPages.getUserLable());
