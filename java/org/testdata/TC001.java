@@ -1,8 +1,11 @@
 package org.testdata;
 
 import org.BasePages.BasePage;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.pages.LoginPages;
 import org.pages.SearchHotalPage;
+import org.seleniumBase.Locators;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -29,20 +32,38 @@ public class TC001 extends BasePage {
 	
 	@Test(dataProvider="data")
 	public void testCases(String[] data) {
-		
-		LoginPages.LoginTestCase(data[0],data[1]);
-		
-		hotalSearchPageAssert();
-		
-		SearchHotalPage.Details();
-		
-	
-		
 
+		//WebElement element = element(Locators.id, "username");
+		type(element(Locators.id, "username"), data[0]);
+		
+		type(element(Locators.id,"password"),data[1]);
+		
+		WebElement element2 = element(Locators.id,"login");
+		click(element2);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	}
 }
 
 
+//
+//String title = getTitle();
+//System.out.println(title);
+
+//LoginPages.LoginTestCase(data[0],data[1]);
+//
+//hotalSearchPageAssert();
+//
+//SearchHotalPage.Details();
+//
 
 
 
