@@ -112,6 +112,7 @@ public class SeleniumBase implements SeleniumApi {
 	public void selectText(WebElement ele, String text) {
 		WebElement element = isElementVisible(ele);
 		new Select(element).selectByVisibleText(text);
+		
 	}
 
 	public void selectIndex(WebElement ele, int position) {
